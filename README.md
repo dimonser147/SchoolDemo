@@ -1,6 +1,6 @@
 # SignIn Demo
 
-The idea is to combine different type of sign in into a single for,
+The idea is to combine different type of sign in into a single form
 
 Some notes about application
 
