@@ -1,0 +1,14 @@
+﻿@using System.Security.Claims
+@if (Request.LogonUserIdentity.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="javascript:void(0)">Hello, @(((ClaimsIdentity)User.Identity).FindFirst("MyClaimName").Value)</a>
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+    }
+}

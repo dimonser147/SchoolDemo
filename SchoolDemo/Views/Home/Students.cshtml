@@ -1,0 +1,19 @@
+﻿@using System.Security.Claims
+@using SchoolDemo.Business.Account
+@{
+    ViewBag.Title = "Students";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (((ClaimsIdentity)User.Identity).FindFirst("MyClaimType").Value != nameof(AccountType.Students))
+{
+    <div class="alert alert-danger" role="alert">
+        <strong>Ooops!</strong> You don't have enough permissions to access this page
+    </div>
+}
+else
+{
+    <h2>Students</h2>
+    <p>@ViewBag.Message</p>
+}
+
