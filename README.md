@@ -11,3 +11,4 @@ Some notes about application
 # Important!
 
   - Set value for an ActiveDirectoryDomainName application setting in the webconfig to enable Active Directory sing in
+  - Username should contain domain name to active AD sign in mode
