@@ -8,13 +8,14 @@ using System.Configuration;
 
 namespace SchoolDemo.Business.Account
 {
-    class TeachersAccountProvider : AccountProvider
+    class ParentsAccountProvider : AccountProvider
     {
+        
         public override AccountType Type
         {
             get
             {
-                return AccountType.Teachers;
+                return AccountType.Parents;
             }
         }
 
@@ -22,13 +23,16 @@ namespace SchoolDemo.Business.Account
         {
             get
             {
-                return "Teachers";
+                return "Parents";
             }
         }
 
         public override bool CheckCredentials(LoginViewModel login)
         {
-            return CheckAdCredentials(login);
+            string authMethod = ConfigurationManager.AppSettings["ParentsAuthMethod"];
+            return string.Equals(authMethod, "ActiveDirectory", StringComparison.OrdinalIgnoreCase)
+                ? CheckAdCredentials(login) 
+                : CheckDbCredentials(login);
         }
     }
 }

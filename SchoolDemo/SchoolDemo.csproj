@@ -162,6 +162,7 @@
     <Compile Include="Business\Account\AccountProvider.cs" />
     <Compile Include="Business\Account\AccountType.cs" />
     <Compile Include="Business\Account\IAccountProvider.cs" />
+    <Compile Include="Business\Account\ParentsAccountProvider.cs" />
     <Compile Include="Business\Account\StudentsAccountProvider.cs" />
     <Compile Include="Business\Account\TeachersAccountProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />

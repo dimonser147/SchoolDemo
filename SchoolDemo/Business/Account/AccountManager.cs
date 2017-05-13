@@ -26,7 +26,12 @@ namespace SchoolDemo.Business.Account
         {
             string domain = ConfigurationManager.AppSettings["ActiveDirectoryDomainName"].ToLowerInvariant();
             username = username.ToLowerInvariant();
-            if(username.Contains(domain))
+            // comment if need to check other account types 
+            if(true)
+            {
+                return AccountType.Parents;
+            }
+            else if(username.Contains(domain))
             {
                 return AccountType.Teachers;
             }

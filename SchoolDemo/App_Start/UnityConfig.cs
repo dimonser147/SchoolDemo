@@ -36,6 +36,7 @@ namespace SchoolDemo.App_Start
             // TODO: Register your types here
             container
                 .RegisterType<IAccountProvider, TeachersAccountProvider>(nameof(AccountType.Teachers))
+                .RegisterType<IAccountProvider, ParentsAccountProvider>(nameof(AccountType.Parents))
                 .RegisterType<IAccountProvider, StudentsAccountProvider>(nameof(AccountType.Students));
         }
     }
